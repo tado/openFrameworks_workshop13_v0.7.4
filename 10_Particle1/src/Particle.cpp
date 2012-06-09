@@ -2,8 +2,8 @@
 
 //コンストラクタ(初期化)
 Particle::Particle(){
-	setInitialCondition(0,0,0,0);
-	damping = 0.01f;
+    setInitialCondition(0,0,0,0);
+    damping = 0.01f;
 }
 
 //デストラクタ(終了処理)
@@ -29,13 +29,13 @@ void Particle::addDampingForce(){
 //初期状態を設定
 void Particle::setInitialCondition(float px, float py, float vx, float vy){
     pos.set(px,py);
-	vel.set(vx,vy);
+    vel.set(vx,vy);
 }
 
 //更新
 void Particle::update(){	
-	vel = vel + frc;
-	pos = pos + vel; 
+    vel = vel + frc;
+    pos = pos + vel; 
 }
 
 //描画

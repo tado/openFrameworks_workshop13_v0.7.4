@@ -14,4 +14,5 @@ public:
 	ofPoint endPos;
 	float pct;
 	float shaper;
+
 };
