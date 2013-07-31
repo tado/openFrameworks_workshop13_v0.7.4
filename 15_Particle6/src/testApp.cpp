@@ -40,9 +40,12 @@ void testApp::mousePressed(int x, int y, int button){
 		//Particleをインスタンス化 → myParticle
         Particle myParticle;
 		//初期化
-        float vx = ofRandom(-10, 10);
-        float vy = ofRandom(-10, 10);
-        myParticle.setInitialCondition(x, y, vx, vy);
+        float length = ofRandom(10.0);
+        float angle = ofRandom(PI * 2.0);
+        ofVec2f speed;
+        speed.x = cos(angle) * length;
+        speed.y = sin(angle) * length;
+		myParticle.setInitialCondition(x, y, speed.x, speed.y);
 		//作成したオブジェクトを配列の末尾に追加
         particles.push_back(myParticle);
     }

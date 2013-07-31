@@ -36,7 +36,12 @@ void testApp::mouseDragged(int x, int y, int button){
 
 void testApp::mousePressed(int x, int y, int button){    
 	for (int i = 0; i < NUM; i++) {
-		p[i].setInitialCondition(x, y, ofRandom(-10,10), ofRandom(-10,10));        
+        float length = ofRandom(10.0);
+        float angle = ofRandom(PI * 2.0);
+        ofVec2f speed;
+        speed.x = cos(angle) * length;
+        speed.y = sin(angle) * length;
+		p[i].setInitialCondition(x, y, speed.x, speed.y);
 	}
 }
 
