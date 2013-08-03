@@ -4,8 +4,6 @@
 class MoveCircle {
 	
 public:
-	
 	void draw();
 	ofPoint currentPos;
-	
 };

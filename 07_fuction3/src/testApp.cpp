@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    
     ofBackground(0, 0, 0);
     ofSetFrameRate(60);
     ofSetVerticalSync(true);
@@ -11,12 +10,10 @@ void testApp::setup(){
     endPos = ofPoint(1000, 600);
     pct = 0;
     shaper = 0.5;
-    
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    
     pct = pct + 0.01;
     
     if (pct > 1.0) {
@@ -24,28 +21,20 @@ void testApp::update(){
     }
     
     currentPos = interpolateByPct(pct, shaper);
-    
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
     ofSetColor(31, 127, 255);
     ofCircle(currentPos.x, currentPos.y, 20);
-    
 }
 
 //--------------------------------------------------------------
 ofPoint testApp::interpolateByPct(float _pct, float _shaper){
-    
-    ofPoint pos;
-    float shapedPct = powf(_pct, _shaper);
-    
-    pos.x = (1.0 - shapedPct) * startPos.x + shapedPct * endPos.x;
-    pos.y = (1.0 - shapedPct) * startPos.y + shapedPct * endPos.y;
-    
-    return pos;
-    
+	ofPoint pos;
+    _pct = powf(_pct, _shaper);
+	pos = (1.0 - _pct) * startPos + (_pct) * endPos;
+	return pos;
 }
 
 //--------------------------------------------------------------
@@ -89,6 +78,6 @@ void testApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
     
 }

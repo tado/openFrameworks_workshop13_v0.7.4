@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    
     ofSetBackgroundAuto(false);
     ofSetVerticalSync(true);
     ofEnableAlphaBlending();
@@ -11,32 +10,25 @@ void testApp::setup(){
     
     myCircle.startPos = ofPoint(10, 400);
     myCircle.endPos = ofPoint(1000, 200);
-    myCircle.shaper = 2.0;
-    
+    myCircle.shaper = 0.5;
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    
     myCircle.update();
-    
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
     fadeToBlack();
     myCircle.draw();
-    
 }
 
 //--------------------------------------------------------------
 void testApp::fadeToBlack() {
-    
     ofSetRectMode(OF_RECTMODE_CORNER);
     ofSetColor(0, 0, 0, 20);
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
-    
 }
 
 //--------------------------------------------------------------

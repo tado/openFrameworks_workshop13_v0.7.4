@@ -2,14 +2,12 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	ofEnableAlphaBlending();
 	ofBackground(0, 0, 0);
 	
 	myCircle.currentPos = ofPoint(400, 300);
-
 }
 
 //--------------------------------------------------------------
@@ -19,9 +17,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	
 	myCircle.draw();
-	
 }
 
 //--------------------------------------------------------------

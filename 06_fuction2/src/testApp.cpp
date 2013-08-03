@@ -30,13 +30,9 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 ofPoint testApp::interpolateByPct(float _pct){
-	
 	ofPoint pos;
-	pos.x = (1.0 - _pct) * startPos.x + (_pct) * endPos.x;
-	pos.y = (1.0 - _pct) * startPos.y + (_pct) * endPos.y;
-	
+	pos = (1.0 - _pct) * startPos + (_pct) * endPos;
 	return pos;
-	
 }
 
 //--------------------------------------------------------------
